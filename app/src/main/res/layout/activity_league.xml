@@ -32,7 +32,7 @@
         android:contentDescription="@string/background_image" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/leagueNextButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -42,6 +42,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/swoosh_button"
         android:fontFamily="@font/montserrat"
+        android:onClick="leagueNextClicked"
         android:text="@string/next"
         app:backgroundTint="@android:color/transparent"
         app:backgroundTintMode="src_over"
