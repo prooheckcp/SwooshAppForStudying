@@ -1,9 +1,9 @@
-package com.example.swoosh
+package com.example.swoosh.controller
 
 import android.os.Bundle
 import android.widget.Button
 import android.content.Intent
-
+import com.example.swoosh.R
 
 
 class MainActivity : BaseActivity() {
