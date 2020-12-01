@@ -3,17 +3,22 @@ package com.example.swoosh.controller
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.swoosh.R
-import com.example.swoosh.utilities.EXTRA_LEAGUE
-import com.example.swoosh.utilities.EXTRA_SKILL
+import com.example.swoosh.model.Player
+import com.example.swoosh.utilities.EXTRA_PLAYER
 import kotlinx.android.synthetic.main.activity_finish.*
 
 class finish : AppCompatActivity() {
+
+    lateinit var player : Player
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_finish)
 
-        val league = intent.getStringExtra(EXTRA_LEAGUE).toString()
-        val skill = intent.getStringExtra(EXTRA_SKILL).toString()
+        player = intent.getParcelableExtra(EXTRA_PLAYER)!!
+
+        val league = player.league
+        val skill = player.skill
 
         searchLeaguesText.text = "Looking for $league $skill's league near you..."
 

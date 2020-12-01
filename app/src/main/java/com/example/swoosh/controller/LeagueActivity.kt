@@ -4,8 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.example.swoosh.utilities.EXTRA_LEAGUE
 import com.example.swoosh.R
+import com.example.swoosh.model.Player
+import com.example.swoosh.utilities.EXTRA_PLAYER
 import kotlinx.android.synthetic.main.activity_league.*
 
 class LeagueActivity : BaseActivity() {
@@ -15,6 +16,7 @@ class LeagueActivity : BaseActivity() {
     }
 
     var selectedLeague: String = ""
+    var player = Player("","")
 
     fun leagueNextClicked(view: View){
 
@@ -22,7 +24,7 @@ class LeagueActivity : BaseActivity() {
 
             //Change to the next window
             val skillActivity = Intent(this, SkillActivity::class.java)
-            skillActivity.putExtra(EXTRA_LEAGUE, selectedLeague)
+            skillActivity.putExtra(EXTRA_PLAYER, player)
 
             startActivity(skillActivity)
         }else{
@@ -40,7 +42,7 @@ class LeagueActivity : BaseActivity() {
         womensLeagueBtn.isChecked = false
         coedLeagueBtn.isChecked = false
 
-        selectedLeague = "mens"
+        player.league = "mens"
     }
 
     //Clicked on womens button
@@ -48,7 +50,7 @@ class LeagueActivity : BaseActivity() {
         coedLeagueBtn.isChecked = false
         mensLeagueBtn.isChecked = false
 
-        selectedLeague = "womens"
+        player.league = "womens"
     }
 
     //Clicked on coed button
@@ -56,7 +58,7 @@ class LeagueActivity : BaseActivity() {
         womensLeagueBtn.isChecked = false
         mensLeagueBtn.isChecked = false
 
-        selectedLeague = "co-ed"
+        player.league = "co-ed"
     }
 
 }
